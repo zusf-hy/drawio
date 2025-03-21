@@ -1,0 +1,17 @@
+name: Verification "~" Whether it is supported in setup-node
+
+on:
+  workflow_dispatch:  # trigger manually
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Node.JS
+        uses: actions/setup-node@v4
+        with:
+          node-version: ~20.11
+      - name: Test Node.JS avaliably
+        run: |
+          node -v
+          npm -v
